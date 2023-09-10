@@ -21,13 +21,18 @@ public class OrderDaoTest {
     @Test
     public void InsertOrderTest() {
         for (int i = 1; i<=10;i++) {
-            orderDao.insertOrder(new BigDecimal(i), 12L, "success");
+            orderDao.insertOrder(new BigDecimal(i), 13L, "success");
         }
     }
 
     @Test
     public void getListTest() {
-        orderDao.getList(Arrays.asList(907580261611339776L,907592879461892097L));
+        orderDao.getList(Arrays.asList(907680904233615360L,907679253368143873L));
+    }
+
+    @Test
+    public void getListByUserIdTest() {
+        orderDao.getListByUserId(12L, Arrays.asList(907679253368143873L));
     }
 
 }

@@ -20,4 +20,6 @@ public interface OrderDao {
 
     @Select("<script> select * from t_order where order_id in <foreach collection='ids' separator=',' open='(' close=')' item='id'> #{id} </foreach> </script>")
     List<Map> getList(@Param("ids") List<Long> orderIds);
+    @Select("<script> select * from t_order where order_id in <foreach collection='ids' separator=',' open='(' close=')' item='id'> #{id} </foreach> and user_id = #{userId} </script>")
+    List<Map> getListByUserId(@Param("userId") Long userId, @Param("ids")List<Long> list);
 }

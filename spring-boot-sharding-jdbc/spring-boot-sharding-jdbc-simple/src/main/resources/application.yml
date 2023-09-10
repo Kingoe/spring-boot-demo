@@ -1,0 +1,26 @@
+server:
+  port: 9098
+  servlet:
+    context-path: /simple
+spring:
+  application:
+    name: sharding-jdbc-simple
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: shardingjdbc
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    root: info
+    org.springframework.web : info
+    com.king: debug
+    druid.sql: debug
+
+

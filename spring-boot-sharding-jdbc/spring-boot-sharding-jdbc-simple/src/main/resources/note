@@ -1,0 +1,5 @@
+
+1. 首先定义数据源 m1 并对 m1进行实际的参数配置
+2. 指定 t_order 表的数据分布情况，分布在 m1.t_order_1,m1.t_order_2
+3. 指定t_order表的主键生成策略，保证id全局唯一
+4. 定义t_order分片策略，order_id为偶数的数据落在t_order_1，为奇数落在t_order_2，分表策略表达式为 t_order_$->{order_id % 2 + 1}
